@@ -18,6 +18,12 @@ dev_dependencies:
   angular_test: ^1.0.0-beta+2
   test: ^0.12.0
 
+# If you depend on @Injectable objects defined in other packages, those packages must also declare that they use the angular2 transformer
+# (or the targeted codegen transformer).
+# https://github.com/dart-lang/angular2/wiki/Transformer
+transformers:
+- angular2
+
 # Uncomment the following in sdk 1.24+ to make pub serve
 # use dartdevc (webdev.dartlang.org/tools/dartdevc).
 web:
