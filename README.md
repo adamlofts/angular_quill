@@ -42,3 +42,12 @@ Add `quillDirectives` to the directives on your app component
 class AppComponent {}
 
 ```
+
+Include Quill JS and css files in your app html.
+
+```html
+  <head>
+    <script src="packages/angular_quill/quill-1.2.4/quill.min.js"></script>
+    <link rel="stylesheet" href="packages/angular_quill/quill-1.2.4/quill.snow.css">
+  </head>
+```
