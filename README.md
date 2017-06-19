@@ -2,11 +2,11 @@
 
 An angular dart component for the Quill rich text editor
 
-## [See it in action](https://adamlofts.github.io/angular_quill/build/example/index.html) 
+## [See it in action](https://adamlofts.github.io/angular_quill_example/build/web/index.html) 
 
-Visit https://adamlofts.github.io/angular_quill/build/example/index.html
+Visit https://adamlofts.github.io/angular_quill_example/build/web/index.html
 
-And view the corresponding [example source code](https://github.com/adamlofts/angular_quill/blob/master/example/app_component.html). 
+And view the corresponding [example source code](https://github.com/adamlofts/angular_quill_example/blob/master/web/app_component.html). 
 
 ## Usage
 
