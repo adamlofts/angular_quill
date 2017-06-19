@@ -1,0 +1,19 @@
+<h1>Quill Component:</h1>
+
+<quill
+        [(ngModel)]="html"
+        placeholder="Write something..."
+        (blur)="blur()"
+        (input)="input()"
+></quill>
+
+<h1>Html:</h1>
+
+<div [innerHtml]="html"></div>
+
+<h1>Source:</h1>
+
+<div>{{ html }}</div>
+
+<h1>Events:</h1>
+<div *ngFor="let event of events">{{ event }}</div>
