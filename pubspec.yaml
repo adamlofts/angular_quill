@@ -1,6 +1,6 @@
 name: angular_quill
 description: Angular dart component for the Quill rich text editor
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/adamlofts/angular_quill
 author: Adam Lofts <adam.lofts@gmail.com>
 

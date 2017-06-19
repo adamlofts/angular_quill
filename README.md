@@ -14,7 +14,7 @@ Add the dependency to pub:
 
 ```yaml
 dependencies:
-  angular_quill: ^0.0.1
+  angular_quill: ^0.0.4
 ```
 
 Add the component to your template
