@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.6
+
+- Upgrade to angular 4.0.0
+
 ## 0.0.5
 
 - Update README
