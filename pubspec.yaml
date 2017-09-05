@@ -1,6 +1,6 @@
 name: angular_quill
 description: Angular dart component for the Quill rich text editor
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/adamlofts/angular_quill
 author: Adam Lofts <adam.lofts@gmail.com>
 
@@ -8,11 +8,11 @@ environment:
   sdk: '>=1.23.0 <2.0.0'
 
 dependencies:
-  angular2: ^3.0.0
+  angular: ^4.0.0
+  angular_forms: ^1.0.0
   func: ^1.0.0
   js: ^0.6.1
   browser: ^0.10.0
-  pageloader: ^2.2.6
 
 dev_dependencies:
   angular_test: ^1.0.0-beta+2
@@ -22,7 +22,7 @@ dev_dependencies:
 # (or the targeted codegen transformer).
 # https://github.com/dart-lang/angular2/wiki/Transformer
 transformers:
-- angular2
+- angular
 
 # Uncomment the following in sdk 1.24+ to make pub serve
 # use dartdevc (webdev.dartlang.org/tools/dartdevc).

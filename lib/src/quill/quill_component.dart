@@ -2,7 +2,8 @@
 import 'dart:async';
 import 'dart:html' show Element;
 
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
 import 'package:func/func.dart' show VoidFunc0, VoidFunc1;
 import "package:js/js.dart" show allowInterop;
 

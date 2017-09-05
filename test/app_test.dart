@@ -1,6 +1,8 @@
+/*
 @Tags(const ['aot'])
 @TestOn('browser')
 import 'dart:async';
+
 
 import 'package:angular2/angular2.dart';
 import 'package:angular_test/angular_test.dart';
@@ -36,3 +38,4 @@ class AppPO {
 
   Future<String> get title => _title.visibleText;
 }
+*/
