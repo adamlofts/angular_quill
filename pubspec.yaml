@@ -1,31 +1,19 @@
 name: angular_quill
 description: Angular dart component for the Quill rich text editor
-version: 0.0.6
+version: 0.1.0
 homepage: https://github.com/adamlofts/angular_quill
 author: Adam Lofts <adam.lofts@gmail.com>
 
 environment:
-  sdk: '>=1.23.0 <2.0.0'
+  sdk: '>=2.0.0'
 
 dependencies:
-  angular: ^4.0.0
-  angular_forms: ^1.0.0
-  func: ^1.0.0
-  js: ^0.6.1
-  browser: ^0.10.0
+  angular: ^5.0.0
+  angular_forms: ^2.0.0
+  js: ^0.6.1+1
 
 dev_dependencies:
-  angular_test: ^1.0.0-beta+2
-  test: ^0.12.0
 
-# If you depend on @Injectable objects defined in other packages, those packages must also declare that they use the angular2 transformer
-# (or the targeted codegen transformer).
-# https://github.com/dart-lang/angular2/wiki/Transformer
-transformers:
-- angular
-
-# Uncomment the following in sdk 1.24+ to make pub serve
-# use dartdevc (webdev.dartlang.org/tools/dartdevc).
 web:
   compiler:
     debug: dartdevc

@@ -4,7 +4,6 @@ import 'dart:html' show Element;
 
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
-import 'package:func/func.dart' show VoidFunc0, VoidFunc1;
 import "package:js/js.dart" show allowInterop;
 
 import 'quill.dart' as quill;
@@ -12,7 +11,7 @@ import 'quill.dart' as quill;
 @Directive(
     selector: 'quill[ngModel]',
     providers: const [
-      const Provider(NG_VALUE_ACCESSOR, useExisting: QuillValueAccessor, multi: true)
+      const Provider(ngValueAccessor, useExisting: QuillValueAccessor, multi: true)
     ]
 )
 class QuillValueAccessor implements ControlValueAccessor<String>, OnDestroy {
@@ -20,8 +19,8 @@ class QuillValueAccessor implements ControlValueAccessor<String>, OnDestroy {
   StreamSubscription _blurSub;
   StreamSubscription _inputSub;
 
-  VoidFunc0 onTouched = () {};
-  VoidFunc1 onChange = (dynamic _) {};
+  TouchFunction onTouched = () {};
+  ChangeFunction<String> onChange = (String _, {String rawValue}) {};
 
   QuillValueAccessor(this._quill) {
     _inputSub = _quill.input.listen(_onInput);
@@ -50,15 +49,19 @@ class QuillValueAccessor implements ControlValueAccessor<String>, OnDestroy {
 
   /// Set the function to be called when the control receives a change event.
   @override
-  void registerOnChange(void fn(dynamic _, {String rawValue})) {
-    this.onChange = (value) {
-      fn(value, rawValue: value);
-    };
+  void registerOnChange(ChangeFunction<String> fn) {
+    this.onChange = fn;
   }
+
   /// Set the function to be called when the control receives a touch event.
   @override
-  void registerOnTouched(void fn()) {
+  void registerOnTouched(TouchFunction fn) {
     onTouched = fn;
+  }
+
+  @override
+  void onDisabledChanged(bool isDisabled) {
+    _quill.disabled = isDisabled;
   }
 }
 
@@ -70,15 +73,14 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   quill.QuillStatic quillEditor;
 
   @ViewChild('editor')
-  ElementRef editor;
+  Element editor;
 
   String _initialValue = '';
   String get value {
-    Element elmt = editor.nativeElement;
-    if (elmt.children.isEmpty) {
+    if (editor.children.isEmpty) {
       return '';
     }
-    return elmt.children.first.innerHtml;
+    return editor.children.first.innerHtml;
   }
   @Input()
   set value (String val) {
@@ -117,7 +119,7 @@ class QuillComponent implements AfterContentInit, OnDestroy {
 
   @override
   ngAfterContentInit() {
-    quillEditor = new quill.QuillStatic(editor.nativeElement,
+    quillEditor = new quill.QuillStatic(editor,
         new quill.QuillOptionsStatic(theme: 'snow', placeholder: placeholder));
     quillEditor.enable(!_disabled);
     quillEditor.pasteHTML(_initialValue);
