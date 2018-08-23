@@ -5,7 +5,7 @@ homepage: https://github.com/adamlofts/angular_quill
 author: Adam Lofts <adam.lofts@gmail.com>
 
 environment:
-  sdk: '>=2.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
   angular: ^5.0.0
@@ -13,7 +13,3 @@ dependencies:
   js: ^0.6.1+1
 
 dev_dependencies:
-
-web:
-  compiler:
-    debug: dartdevc
