@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Add `build.yaml` file so theme css files are included in build.
+
 ## 0.1.0
 
 - Upgrade to dart 2 and angular 5

@@ -1,0 +1,11 @@
+# Angular by default deletes css files under lib because it assumes it inlines them into dart code
+# To make sure the css file is included in the build output we specify a build.yaml file and configure specific
+# file excludes for the builder in the angular package that performs the cleanup.
+targets:
+  $default:
+    builders:
+      angular|component_source_cleanup:
+        enabled: true
+        generate_for:
+          exclude:
+          - "lib/quill-1.2.4/quill.snow.css"
