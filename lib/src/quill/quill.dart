@@ -149,8 +149,7 @@ abstract class QuillStatic {
       dynamic /*VoidFunc3<T, T, String>|(name: string, ...args: any[]) => void*/ callback);
   external QuillStatic once(
       String eventName, void callback(DeltaStatic delta, String source));
-  external QuillStatic off(
-      String eventName, void callback(DeltaStatic delta, String source));
+  external QuillStatic off(String eventName, dynamic callback);
   external void debug(String level);
   external dynamic JS$import(String path);
   /*external void register(String path, dynamic def, [bool suppressWarning]);*/
