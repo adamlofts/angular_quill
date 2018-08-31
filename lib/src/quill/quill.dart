@@ -24,10 +24,10 @@ abstract class QuillOptionsStatic {
   external set theme(String v);
   external factory QuillOptionsStatic(
       {String debug,
-        Map<String, Object> /*JSMap of <String,dynamic>*/ modules,
-        String placeholder,
-        bool readOnly,
-        String theme});
+      Map<String, Object> /*JSMap of <String,dynamic>*/ modules,
+      String placeholder,
+      bool readOnly,
+      String theme});
 }
 
 @anonymous
@@ -59,10 +59,10 @@ abstract class DeltaStatic {
   external set attributes(dynamic v);
   external factory DeltaStatic(
       {List<dynamic> ops,
-        dynamic retain,
-        dynamic delete,
-        dynamic insert,
-        dynamic attributes});
+      dynamic retain,
+      dynamic delete,
+      dynamic insert,
+      dynamic attributes});
 }
 
 @anonymous
@@ -101,13 +101,13 @@ abstract class QuillStatic {
   /*external void insertText(num index, String text, formatsType formats, ['api'|'user'|'silent' source]);*/
   external void insertText(num index, String text,
       [String /*'api'|'user'|'silent'|String*/ source_format_formats,
-        String /*String|'api'|'user'|'silent'*/ value_source,
-        String /*'api'|'user'|'silent'*/ source]);
+      String /*String|'api'|'user'|'silent'*/ value_source,
+      String /*'api'|'user'|'silent'*/ source]);
   /*external String pasteHTML(num index, String html, ['api'|'user'|'silent' source]);*/
   /*external String pasteHTML(String html, ['api'|'user'|'silent' source]);*/
   external String pasteHTML(dynamic /*num|String*/ index_html,
       [String /*String|'api'|'user'|'silent'*/ html_source,
-        String /*'api'|'user'|'silent'*/ source]);
+      String /*'api'|'user'|'silent'*/ source]);
   external void setContents(DeltaStatic delta,
       [String /*'api'|'user'|'silent'*/ source]);
   external void setText(String text, [String /*'api'|'user'|'silent'*/ source]);
@@ -121,15 +121,15 @@ abstract class QuillStatic {
   /*external void formatLine(num index, num length, formatsType formats, ['api'|'user'|'silent' source]);*/
   external void formatLine(num index, num length,
       [String /*'api'|'user'|'silent'|String*/ source_format_formats,
-        dynamic /*dynamic|'api'|'user'|'silent'*/ value_source,
-        String /*'api'|'user'|'silent'*/ source]);
+      dynamic /*dynamic|'api'|'user'|'silent'*/ value_source,
+      String /*'api'|'user'|'silent'*/ source]);
   /*external void formatText(num index, num length, ['api'|'user'|'silent' source]);*/
   /*external void formatText(num index, num length, String format, dynamic value, ['api'|'user'|'silent' source]);*/
   /*external void formatText(num index, num length, formatsType formats, ['api'|'user'|'silent' source]);*/
   external void formatText(num index, num length,
       [String /*'api'|'user'|'silent'|String*/ source_format_formats,
-        dynamic /*dynamic|'api'|'user'|'silent'*/ value_source,
-        String /*'api'|'user'|'silent'*/ source]);
+      dynamic /*dynamic|'api'|'user'|'silent'*/ value_source,
+      String /*'api'|'user'|'silent'*/ source]);
   /*external formatsType getFormat([RangeStatic range]);*/
   /*external formatsType getFormat(num index, [num length]);*/
   external getFormat([dynamic /*RangeStatic|num*/ range_index, num length]);
@@ -144,7 +144,7 @@ abstract class QuillStatic {
   /*external void setSelection(RangeStatic range, ['api'|'user'|'silent' source]);*/
   external void setSelection(dynamic /*num|RangeStatic*/ index_range,
       [dynamic /*num|'api'|'user'|'silent'*/ length_source,
-        String /*'api'|'user'|'silent'*/ source]);
+      String /*'api'|'user'|'silent'*/ source]);
   external QuillStatic on(String eventName,
       dynamic /*VoidFunc3<T, T, String>|(name: string, ...args: any[]) => void*/ callback);
   external QuillStatic once(

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:html' show Element;
 
@@ -8,12 +7,9 @@ import "package:js/js.dart" show allowInterop;
 
 import 'quill.dart' as quill;
 
-@Directive(
-    selector: 'quill[ngModel]',
-    providers: const [
-      const Provider(ngValueAccessor, useExisting: QuillValueAccessor, multi: true)
-    ]
-)
+@Directive(selector: 'quill[ngModel]', providers: const [
+  const Provider(ngValueAccessor, useExisting: QuillValueAccessor, multi: true)
+])
 class QuillValueAccessor implements ControlValueAccessor<String>, OnDestroy {
   final QuillComponent _quill;
   StreamSubscription _blurSub;
@@ -82,8 +78,9 @@ class QuillComponent implements AfterContentInit, OnDestroy {
     }
     return editor.children.first.innerHtml;
   }
+
   @Input()
-  set value (String val) {
+  set value(String val) {
     String v = val ?? '';
     if (quillEditor == null) {
       _initialValue = val;
@@ -142,7 +139,8 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   /// A null range indicates selection loss (usually caused by loss of focus from the editor). You can also use this
   /// event as a focus change event by just checking if the emitted range is null or not.
   void _onSelectionChange(range, oldRange, String source) {
-    if (range == null) {  // null range indicates blur event
+    if (range == null) {
+      // null range indicates blur event
       _blur.add(null);
     }
   }
@@ -153,4 +151,3 @@ class QuillComponent implements AfterContentInit, OnDestroy {
     _input.add(value);
   }
 }
-

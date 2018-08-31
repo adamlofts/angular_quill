@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.2
+
+- Fix type of `off` to fix crash when destroying component in DDC. 
+- Dart fmt
+
 ## 0.1.1
 
 - Add `build.yaml` file so theme css files are included in build.
