@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:html' show Element;
+import 'dart:js_util' show jsify;
 
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
@@ -92,6 +93,9 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   @Input()
   String placeholder = '';
 
+  @Input()
+  dynamic modules = {};
+
   bool _disabled = false;
   bool get disabled => _disabled;
   @Input()
@@ -117,7 +121,12 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   @override
   ngAfterContentInit() {
     quillEditor = new quill.QuillStatic(editor,
-        new quill.QuillOptionsStatic(theme: 'snow', placeholder: placeholder));
+      new quill.QuillOptionsStatic(
+        theme: 'snow',
+        placeholder: placeholder,
+        modules: jsify(modules)
+      )
+    );
     quillEditor.enable(!_disabled);
     quillEditor.pasteHTML(_initialValue);
 
