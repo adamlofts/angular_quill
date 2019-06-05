@@ -24,7 +24,7 @@ abstract class QuillOptionsStatic {
   external set theme(String v);
   external factory QuillOptionsStatic(
       {String debug,
-      Map<String, Object> /*JSMap of <String,dynamic>*/ modules,
+      dynamic /*JSMap of <String,dynamic>*/ modules,
       String placeholder,
       bool readOnly,
       String theme});
