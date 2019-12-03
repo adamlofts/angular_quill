@@ -111,6 +111,10 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   @Output()
   Stream get blur => _blur.stream;
 
+  final StreamController _focus = new StreamController();
+  @Output()
+  Stream get focus => _focus.stream;
+
   final StreamController _input = new StreamController.broadcast();
   @Output()
   Stream get input => _input.stream;
@@ -146,12 +150,16 @@ class QuillComponent implements AfterContentInit, OnDestroy {
   }
 
   /// Emitted when a user or API causes the selection to change, with a range representing the selection boundaries.
-  /// A null range indicates selection loss (usually caused by loss of focus from the editor). You can also use this
-  /// event as a focus change event by just checking if the emitted range is null or not.
+  ///
+  /// When range changes from null value to non-null value, it indicates focus lost so we emit [blur] event.
+  /// When range changes from non-null value to null value, it indicates gain of focus so we emit [focus] event.
   void _onSelectionChange(range, oldRange, String source) {
-    if (range == null) {
+    if (oldRange != null && range == null) {
       // null range indicates blur event
       _blur.add(null);
+    } else if (oldRange == null && range != null) {
+      // change from null to non-null range indicates focus event
+      _focus.add(null);
     }
   }
 
