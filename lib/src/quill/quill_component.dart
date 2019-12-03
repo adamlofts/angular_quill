@@ -127,13 +127,14 @@ class QuillComponent implements AfterContentInit, OnDestroy {
         modules: jsify(modules)
       )
     );
-    quillEditor.enable(!_disabled);
-    quillEditor.pasteHTML(_initialValue);
 
     _textChangeSub = allowInterop(_onTextChange);
     _selectionChangeSub = allowInterop(_onSelectionChange);
     quillEditor.on('text-change', _textChangeSub);
     quillEditor.on('selection-change', _selectionChangeSub);
+
+    quillEditor.enable(!_disabled);
+    quillEditor.pasteHTML(_initialValue);
   }
 
   @override
