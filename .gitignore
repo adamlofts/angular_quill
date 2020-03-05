@@ -11,3 +11,4 @@ doc/api/
 .idea/workspace.xml
 .idea/vcs.xml
 
+.dart_tool
