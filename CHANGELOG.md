@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Allow angular 6
+
 ## 0.1.2
 
 - Fix type of `off` to fix crash when destroying component in DDC. 
