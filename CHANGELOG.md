@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Allow angular_forms 3.0.0
+
 ## 0.1.3
 
 - Allow angular 6
