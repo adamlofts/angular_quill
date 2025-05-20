@@ -2,14 +2,14 @@ import 'dart:async';
 import 'dart:html' show Element;
 import 'dart:js_util' show jsify;
 
-import 'package:angular/angular.dart';
-import 'package:angular_forms/angular_forms.dart';
+import 'package:ngdart/angular.dart';
+import 'package:ngforms/ngforms.dart';
 import "package:js/js.dart" show allowInterop;
 
 import 'quill.dart' as quill;
 
 @Directive(selector: 'quill[ngModel]', providers: const [
-  const Provider(ngValueAccessor, useExisting: QuillValueAccessor, multi: true)
+  const Provider(ngValueAccessor, useExisting: QuillValueAccessor)
 ])
 class QuillValueAccessor implements ControlValueAccessor<String>, OnDestroy {
   final QuillComponent _quill;
