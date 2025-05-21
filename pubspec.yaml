@@ -1,14 +1,14 @@
 name: angular_quill
 description: Angular dart component for the Quill rich text editor. Quill is a free, open source WYSIWYG editor built for the modern web.
-version: 0.1.4
+version: 0.2.1
 homepage: https://github.com/adamlofts/angular_quill
 
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   ngdart: 7.1.1
   ngforms:
-  js: ^0.6.1+1
+  js: ^0.6.3
 
 dev_dependencies:

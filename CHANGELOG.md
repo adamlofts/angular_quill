@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.1
+
+- Minimum sdk 2.12.0
+
+
+## 0.2.0
+
+- Null saftey. Requires AngularDart 7
+- Quill 1.3.6
+
 ## 0.1.4
 
 - Allow angular_forms 3.0.0

@@ -8,4 +8,4 @@ targets:
         enabled: true
         generate_for:
           exclude:
-          - "lib/quill-1.2.4/quill.snow.css"
+          - "lib/quill-1.3.6/quill.snow.css"
